@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.CMDbox.Commands.CommandMute;
 import com.CMDbox.Commands.CommandTp;
+import com.CMDbox.Commands.CommandTphere;
 
 public class CMDbox extends JavaPlugin {
 	public CMDbox plugin;
@@ -24,6 +25,7 @@ public class CMDbox extends JavaPlugin {
 	public void getCommands(CMDbox CMDbox){
 		this.getCommand("mute").setExecutor(new CommandMute(this));
 		this.getCommand("tp").setExecutor(new CommandTp(this));
+		this.getCommand("tphere").setExecutor(new CommandTphere(this));
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
