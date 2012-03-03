@@ -12,6 +12,7 @@ public class CMDbox extends JavaPlugin {
 	
 	public void onEnable(){
 		PluginManager pm = getServer().getPluginManager();
+			pm.registerEvents(new Chat(), this);
 		
 		getCommands(this);
 		PluginConfig(this);
