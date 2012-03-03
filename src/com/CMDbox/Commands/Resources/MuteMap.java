@@ -6,4 +6,5 @@ import org.bukkit.entity.Player;
 
 public class MuteMap {
 	public static HashMap<Player, String> mu = new HashMap<Player, String>();
-}
+	}
+
