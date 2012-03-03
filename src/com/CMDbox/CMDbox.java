@@ -9,7 +9,7 @@ public class CMDbox extends JavaPlugin {
 	public CMDbox plugin;
 	
 	public void onDisable(){
-		
+		this.saveConfig();
 	}
 	
 	public void onEnable(){
@@ -25,6 +25,7 @@ public class CMDbox extends JavaPlugin {
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
+		this.getConfig().options().header("CMDbox Config file!");
 		this.getConfig().addDefault("blah", "blah");
 		this.saveConfig();
 	}
