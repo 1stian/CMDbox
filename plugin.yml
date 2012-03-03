@@ -24,3 +24,7 @@ commands:
       descitption: Unbans banned player
       permissions: CMDbox.Unban
       usage: /unabn <player>
+   kick:
+      description: Kicks player from the server
+      permissions: CMDbox.Kick
+      usage: /kick <player>

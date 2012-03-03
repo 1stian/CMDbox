@@ -4,6 +4,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.CMDbox.Commands.CommandBan;
+import com.CMDbox.Commands.CommandKick;
 import com.CMDbox.Commands.CommandMute;
 import com.CMDbox.Commands.CommandTp;
 import com.CMDbox.Commands.CommandTphere;
@@ -30,6 +31,7 @@ public class CMDbox extends JavaPlugin {
 		this.getCommand("tphere").setExecutor(new CommandTphere(this));
 		this.getCommand("ban").setExecutor(new CommandBan(this));
 		this.getCommand("unban").setExecutor(new CommandUnban(this));
+		this.getCommand("kick").setExecutor(new CommandKick (this));
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
