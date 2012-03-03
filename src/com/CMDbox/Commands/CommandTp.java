@@ -20,7 +20,7 @@ public class CommandTp implements CommandExecutor {
 					cs.sendMessage("Usage: /tp playerName");
 					return true;
 				}else if (args.length > 1){
-					cs.sendMessage("To many arguments!");
+					cs.sendMessage("Too many arguments!");
 					cs.sendMessage("Usage: /tp playerName");
 					return true;
 				}else{
