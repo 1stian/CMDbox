@@ -16,3 +16,7 @@ commands:
       description: Teleports a player to you
       permission: CMDbox.tphere
       usage: /tphere <player>
+   ban:
+      description: Bans player
+      permissions: CMDbox.ban
+      Usage: /ban <player>
