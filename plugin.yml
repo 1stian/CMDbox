@@ -8,3 +8,7 @@ commands:
       description: Mutes/unmutes a player
       permission: CMDbox.mute
       usage: /mute <player>
+   tp:
+      description: Teleports you to a player
+      permission: CMDbox.tp
+      usage: /tp <player>
