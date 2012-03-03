@@ -2,12 +2,18 @@ package com.CMDbox.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.CMDbox.CMDbox;
 import com.CMDbox.Commands.Resources.MuteMap;
 
-public class CommandMute {
+public class CommandMute implements CommandExecutor {
+	public CommandMute(CMDbox cmDbox) {
+		
+	}
+
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("mute")) {
 			Player player = (Player) sender;

@@ -2,3 +2,9 @@ name: CMDbox
 author: AlphaFarFar - vYN
 version: 0.1
 main: com.CMDbox.CMDbox
+
+commands:
+   mute:
+      description: Mutes/unmutes a player
+      permission: CMDbox.mute
+      usage: /mute <player>
