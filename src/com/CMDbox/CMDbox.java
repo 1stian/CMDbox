@@ -26,7 +26,7 @@ public class CMDbox extends JavaPlugin {
 	
 	public void PluginConfig(CMDbox CMDbox){
 		this.getConfig().options().header("CMDbox Config file!");
-		this.getConfig().addDefault("blah", "blah");
+		this.getConfig().set("blah boolean test", true);
 		this.saveConfig();
 	}
 }
