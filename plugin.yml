@@ -19,4 +19,8 @@ commands:
    ban:
       description: Bans player
       permissions: CMDbox.ban
-      Usage: /ban <player>
+      usage: /ban <player>
+   unban:
+      descitption: Unbans banned player
+      permissions: CMDbox.Unban
+      usage: /unabn <player>

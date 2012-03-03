@@ -7,6 +7,7 @@ import com.CMDbox.Commands.CommandBan;
 import com.CMDbox.Commands.CommandMute;
 import com.CMDbox.Commands.CommandTp;
 import com.CMDbox.Commands.CommandTphere;
+import com.CMDbox.Commands.CommandUnban;
 
 public class CMDbox extends JavaPlugin {
 	public CMDbox plugin;
@@ -28,6 +29,7 @@ public class CMDbox extends JavaPlugin {
 		this.getCommand("tp").setExecutor(new CommandTp(this));
 		this.getCommand("tphere").setExecutor(new CommandTphere(this));
 		this.getCommand("ban").setExecutor(new CommandBan(this));
+		this.getCommand("unban").setExecutor(new CommandUnban(this));
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
