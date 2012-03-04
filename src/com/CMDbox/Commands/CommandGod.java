@@ -29,8 +29,7 @@ public class CommandGod implements CommandExecutor{
 		if (cmd.getName().equalsIgnoreCase("god")&& args.length == 1);
 		if (!player.hasPermission("CMDbox.God")){
 			sender.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
-		}else if
-		   (player.hasPermission("CMDbox.God"));
+		}else if (player.hasPermission("CMDbox.God"));
 		   player.setNoDamageTicks(999999999);
 		   sender.sendMessage(ChatColor.GREEN + "Godmode activated!");
 		   target.setNoDamageTicks(999999999);
