@@ -1,5 +1,7 @@
 package com.CMDbox;
 
+import java.io.File;
+
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -9,6 +11,7 @@ import com.CMDbox.Commands.CommandMute;
 import com.CMDbox.Commands.CommandTp;
 import com.CMDbox.Commands.CommandTphere;
 import com.CMDbox.Commands.CommandUnban;
+import com.CMDbox.Commands.Resources.WarpConfig;
 
 public class CMDbox extends JavaPlugin {
 	public CMDbox plugin;
@@ -23,6 +26,10 @@ public class CMDbox extends JavaPlugin {
 		
 		getCommands(this);
 		PluginConfig(this);
+		
+		File datadir = new File (this.getDataFolder() + "/data");
+		datadir.mkdir();
+		WarpConfig.getWarps();
 	}
 	
 	public void getCommands(CMDbox CMDbox){
