@@ -28,3 +28,11 @@ commands:
       description: Kicks player from the server
       permissions: CMDbox.Kick
       usage: /kick <player>
+   setwarp:
+      description: Sets a warp at your location
+      permissions: CMDbox.setwarp
+      usage: /setwarp <warpName>
+   warp:
+      description: Warps to a warp xD
+      permissions: CMDbox.warp
+      usage: /warp <warpName>

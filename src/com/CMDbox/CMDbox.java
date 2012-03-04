@@ -1,6 +1,7 @@
 package com.CMDbox;
 
 import java.io.File;
+import java.util.logging.Logger;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,13 +9,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.CMDbox.Commands.CommandBan;
 import com.CMDbox.Commands.CommandKick;
 import com.CMDbox.Commands.CommandMute;
+import com.CMDbox.Commands.CommandSetWarp;
 import com.CMDbox.Commands.CommandTp;
 import com.CMDbox.Commands.CommandTphere;
 import com.CMDbox.Commands.CommandUnban;
+import com.CMDbox.Commands.CommandWarp;
 import com.CMDbox.Commands.Resources.WarpConfig;
 
 public class CMDbox extends JavaPlugin {
-	public CMDbox plugin;
+	public static CMDbox plugin;
+	public Logger log = Logger.getLogger("Minecraft");
 	
 	public void onDisable(){
 		this.saveConfig();
@@ -29,7 +33,7 @@ public class CMDbox extends JavaPlugin {
 		
 		File datadir = new File (this.getDataFolder() + "/data");
 		datadir.mkdir();
-		WarpConfig.reloadWarp();
+		WarpConfig.loadWarps();
 	}
 	
 	public void getCommands(CMDbox CMDbox){
@@ -39,6 +43,8 @@ public class CMDbox extends JavaPlugin {
 		this.getCommand("ban").setExecutor(new CommandBan(this));
 		this.getCommand("unban").setExecutor(new CommandUnban(this));
 		this.getCommand("kick").setExecutor(new CommandKick (this));
+		this.getCommand("setwarp").setExecutor(new CommandSetWarp(this));
+		this.getCommand("warp").setExecutor(new CommandWarp(this));
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
