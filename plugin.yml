@@ -40,4 +40,8 @@ commands:
       description: Makes player take no damage.
       permissions: CMDbox.God
       usage: /god <player>
+   Item:
+      description: Gives player item.
+      permissions: CMDbox.Item
+      usage: /item <item ID> 
       

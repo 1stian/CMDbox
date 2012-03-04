@@ -1,6 +1,5 @@
 package com.CMDbox.Commands;
 
-import java.lang.annotation.Target;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -24,23 +23,19 @@ public class CommandGod implements CommandExecutor{
 		}else if 
 		   (args.length < 1){
 			sender.sendMessage("Too many arguments!");
-			return true;
+		return true;
 		}
-		Player target = player.getServer().getPlayer(args[0]);
+		   Player target = player.getServer().getPlayer(args[0]);
 		if (cmd.getName().equalsIgnoreCase("god")&& args.length == 1);
 		if (!player.hasPermission("CMDbox.God")){
 			sender.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
 		}else if
 		   (player.hasPermission("CMDbox.God"));
-		player.setNoDamageTicks(999999999);
+		   player.setNoDamageTicks(999999999);
 		   sender.sendMessage(ChatColor.GREEN + "Godmode activated!");
 		   target.setNoDamageTicks(999999999);
 		   target.sendMessage(ChatColor.GREEN + "Godmode activated!");
 		   
-	
-	
-				
-		
 		return false;
      }	
 }
