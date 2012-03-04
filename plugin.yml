@@ -36,3 +36,8 @@ commands:
       description: Warps to a warp xD
       permissions: CMDbox.warp
       usage: /warp <warpName>
+   Godmode:
+      description: Makes player take no damage.
+      permissions: CMDbox.God
+      usage: /god <player>
+      
