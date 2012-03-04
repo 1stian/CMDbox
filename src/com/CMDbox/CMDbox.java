@@ -29,7 +29,7 @@ public class CMDbox extends JavaPlugin {
 		
 		File datadir = new File (this.getDataFolder() + "/data");
 		datadir.mkdir();
-		WarpConfig.getWarps();
+		WarpConfig.reloadWarp();
 	}
 	
 	public void getCommands(CMDbox CMDbox){
