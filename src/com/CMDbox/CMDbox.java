@@ -26,7 +26,7 @@ public class CMDbox extends JavaPlugin {
 	public Logger log = Logger.getLogger("Minecraft");
 	
 	public void onDisable(){
-		this.saveConfig();
+		DefaultConfig.saveConfig();
 	}
 	
 	public void onEnable(){
@@ -40,6 +40,7 @@ public class CMDbox extends JavaPlugin {
 		datadir.mkdir();
 		WarpConfig.loadWarps();
 		DefaultConfig.loadConfig();
+		PluginConfig(this);
 	}
 	
 	public void getCommands(CMDbox CMDbox){
