@@ -54,7 +54,7 @@ public class CMDbox extends JavaPlugin {
 		pluginNS.getServer().getScheduler().scheduleSyncDelayedTask(pluginNS, new Runnable() {
 
 		    public void run() {
-		    	bc.messages();
+		    	BroadCaster.messages();
 		    }
 		}, 120L);
 	}
