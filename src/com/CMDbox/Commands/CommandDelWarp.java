@@ -26,8 +26,11 @@ public class CommandDelWarp implements CommandExecutor {
 					String WarpEx = args[0];
 					if (WarpConfig.WarpConfig.contains(WarpEx)){
 						WarpConfig.WarpConfig.set(args[0], null);
+						cs.sendMessage("Warp " + args[0] + " is now deleted!");
+						return true;
 					}else{
 						cs.sendMessage("Warp does not exsist!");
+						return true;
 					}
 				}
 			}
