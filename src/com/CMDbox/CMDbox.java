@@ -26,7 +26,7 @@ public class CMDbox extends JavaPlugin {
 	public Logger log = Logger.getLogger("Minecraft");
 	
 	public void onDisable(){
-		DefaultConfig.saveConfig();
+		
 	}
 	
 	public void onEnable(){
@@ -61,7 +61,10 @@ public class CMDbox extends JavaPlugin {
 	public void PluginConfig(CMDbox CMDbox){
 		DefaultConfig.getConfig().getDefaults();
 		DefaultConfig.DefaultConfig.options().header("CMDbox Config file!");
-		DefaultConfig.DefaultConfig.addDefault("bla test", true);
+		DefaultConfig.DefaultConfig.addDefault("players.Homes.Allow multiple homes", true);
+		DefaultConfig.DefaultConfig.addDefault("players.Homes.How many homes allowed", 5);
+		DefaultConfig.DefaultConfig.addDefault("BroadCaster.Enable", false);
+		DefaultConfig.DefaultConfig.addDefault("BroadCaster.interval", 45);
 		DefaultConfig.saveConfig();
 	}
 }
