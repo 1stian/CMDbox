@@ -1,6 +1,9 @@
 package com.CMDbox;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.logging.Logger;
 
 import org.bukkit.plugin.PluginManager;
@@ -73,5 +76,9 @@ public class CMDbox extends JavaPlugin {
 		MessagesTextFile.MessagesConfig.options().header("CMDbox BroadCaster settings!");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.Enable", false);
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
+		List<String> list = MessagesTextFile.MessagesConfig.getStringList("messages");
+		list.add("Hi and welcome!");
+		list.add("Hi2 and welcome2!");
+		MessagesTextFile.saveMessages();
 	}
 }
