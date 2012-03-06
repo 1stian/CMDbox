@@ -77,8 +77,6 @@ public class CMDbox extends JavaPlugin {
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.Enable", false);
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
 		List<String> list = MessagesTextFile.MessagesConfig.getStringList("messages");
-		list.add("Hi and welcome!");
-		list.add("Hi2 and welcome2!");
 		MessagesTextFile.saveMessages();
 	}
 }
