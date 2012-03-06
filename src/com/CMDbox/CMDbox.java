@@ -19,6 +19,7 @@ import com.CMDbox.Commands.CommandTphere;
 import com.CMDbox.Commands.CommandUnban;
 import com.CMDbox.Commands.CommandWarp;
 import com.CMDbox.Config.DefaultConfig;
+import com.CMDbox.Config.MessagesTextFile;
 import com.CMDbox.Config.WarpConfig;
 
 public class CMDbox extends JavaPlugin {
@@ -40,7 +41,9 @@ public class CMDbox extends JavaPlugin {
 		datadir.mkdir();
 		WarpConfig.loadWarps();
 		DefaultConfig.loadConfig();
+		MessagesTextFile.loadMessages();
 		PluginConfig(this);
+		MessagesConfigFile(this);
 	}
 	
 	public void getCommands(CMDbox CMDbox){
@@ -63,8 +66,12 @@ public class CMDbox extends JavaPlugin {
 		DefaultConfig.DefaultConfig.options().header("CMDbox Config file!");
 		DefaultConfig.DefaultConfig.addDefault("players.Homes.Allow multiple homes", true);
 		DefaultConfig.DefaultConfig.addDefault("players.Homes.How many homes allowed", 5);
-		DefaultConfig.DefaultConfig.addDefault("BroadCaster.Enable", false);
-		DefaultConfig.DefaultConfig.addDefault("BroadCaster.interval", 45);
 		DefaultConfig.saveConfig();
+	}
+	
+	public void MessagesConfigFile(CMDbox CMDbox){
+		MessagesTextFile.MessagesConfig.options().header("CMDbox BroadCaster settings!");
+		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.Enable", false);
+		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
 	}
 }
