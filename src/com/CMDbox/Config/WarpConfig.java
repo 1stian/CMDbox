@@ -1,4 +1,4 @@
-package com.CMDbox.Commands.Resources;
+package com.CMDbox.Config;
 
 import java.io.File;
 import java.io.IOException;

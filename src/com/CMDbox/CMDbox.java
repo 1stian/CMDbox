@@ -18,7 +18,8 @@ import com.CMDbox.Commands.CommandTp;
 import com.CMDbox.Commands.CommandTphere;
 import com.CMDbox.Commands.CommandUnban;
 import com.CMDbox.Commands.CommandWarp;
-import com.CMDbox.Commands.Resources.WarpConfig;
+import com.CMDbox.Config.DefaultConfig;
+import com.CMDbox.Config.WarpConfig;
 
 public class CMDbox extends JavaPlugin {
 	public static CMDbox plugin;
@@ -38,6 +39,7 @@ public class CMDbox extends JavaPlugin {
 		File datadir = new File (this.getDataFolder() + "/data");
 		datadir.mkdir();
 		WarpConfig.loadWarps();
+		DefaultConfig.loadConfig();
 	}
 	
 	public void getCommands(CMDbox CMDbox){
@@ -56,9 +58,9 @@ public class CMDbox extends JavaPlugin {
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
-		this.getConfig().getDefaults();
-		this.getConfig().options().header("CMDbox Config file!");
-		this.getConfig().set("blah boolean test", true);
-		this.saveConfig();
+		DefaultConfig.getConfig().getDefaults();
+		DefaultConfig.DefaultConfig.options().header("CMDbox Config file!");
+		DefaultConfig.DefaultConfig.addDefault("bla test", true);
+		DefaultConfig.saveConfig();
 	}
 }

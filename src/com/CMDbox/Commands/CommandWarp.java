@@ -8,8 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.CMDbox.CMDbox;
-import com.CMDbox.Commands.Resources.WarpConfig;
 import com.CMDbox.Commands.Resources.WarpMap;
+import com.CMDbox.Config.WarpConfig;
 
 public class CommandWarp implements CommandExecutor {
 	

@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.CMDbox.CMDbox;
-import com.CMDbox.Commands.Resources.WarpConfig;
+import com.CMDbox.Config.WarpConfig;
 
 public class CommandSetWarp implements CommandExecutor {
 	public CommandSetWarp(CMDbox cmDbox) {
