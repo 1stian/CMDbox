@@ -1,6 +1,8 @@
 name: CMDbox
 author: AlphaFarFar - vYN
+description: Gives you everyting you need! changing this
 version: 0.1
+website: http://homiecraft.org
 main: com.CMDbox.CMDbox
 
 commands:
@@ -44,4 +46,7 @@ commands:
       description: Gives player item.
       permissions: CMDbox.Item
       usage: /item <item ID> 
+   cmdbox:
+      description: Information about CMDbox
+      usage: /cmdbox
       

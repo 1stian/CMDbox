@@ -7,6 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.CMDbox.Commands.CommandBan;
+import com.CMDbox.Commands.CommandCMDbox;
 import com.CMDbox.Commands.CommandGod;
 import com.CMDbox.Commands.CommandItem;
 import com.CMDbox.Commands.CommandKick;
@@ -49,9 +50,11 @@ public class CMDbox extends JavaPlugin {
 		this.getCommand("warp").setExecutor(new CommandWarp(this));
 		this.getCommand("god").setExecutor(new CommandGod(this));
 		this.getCommand("item").setExecutor(new CommandItem(this));
+		this.getCommand("cmdbox").setExecutor(new CommandCMDbox(this));
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
+		this.getConfig().getDefaults();
 		this.getConfig().options().header("CMDbox Config file!");
 		this.getConfig().set("blah boolean test", true);
 		this.saveConfig();
