@@ -27,6 +27,8 @@ import com.CMDbox.Config.WarpConfig;
 
 public class CMDbox extends JavaPlugin {
 	public static CMDbox plugin;
+	public CMDbox pluginNS = this;
+	public BroadCaster bc;
 	public Logger log = Logger.getLogger("Minecraft");
 	
 	public void onDisable(){
@@ -47,6 +49,14 @@ public class CMDbox extends JavaPlugin {
 		MessagesTextFile.loadMessages();
 		PluginConfig(this);
 		MessagesConfigFile(this);
+		//BroadCaster.bc.messages();
+		
+		pluginNS.getServer().getScheduler().scheduleSyncDelayedTask(pluginNS, new Runnable() {
+
+		    public void run() {
+		    	bc.messages();
+		    }
+		}, 120L);
 	}
 	
 	public void getCommands(CMDbox CMDbox){
@@ -76,7 +86,12 @@ public class CMDbox extends JavaPlugin {
 		MessagesTextFile.MessagesConfig.options().header("CMDbox BroadCaster settings!");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.Enable", false);
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
-		List<String> list = MessagesTextFile.MessagesConfig.getStringList("messages");
+		//List<String> list = MessagesTextFile.MessagesConfig.getStringList("messages");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.How many lines", 4);
+		MessagesTextFile.MessagesConfig.addDefault("Messages.1", "Hi and welcome1");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.2", "Hi and welcome2");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.3", "Hi and welcome3");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.4", "Hi and welcome4");
 		MessagesTextFile.saveMessages();
 	}
 }
