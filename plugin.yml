@@ -38,6 +38,10 @@ commands:
       description: Warps to a warp xD
       permissions: CMDbox.warp
       usage: /warp <warpName>
+   delwarp:
+      description: Delete a warp!
+      permissions: CMDbox.delwarp
+      usage: /delwarp <warpName>
    God:
       description: Makes player take no damage.
       permissions: CMDbox.God

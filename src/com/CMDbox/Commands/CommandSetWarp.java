@@ -33,10 +33,10 @@ public class CommandSetWarp implements CommandExecutor {
 						int x = player.getLocation().getBlockX();
 						int y = player.getLocation().getBlockY();
 						int z = player.getLocation().getBlockZ();
-						WarpConfig.WarpConfig.addDefault(Path + "world", curworld);
-						WarpConfig.WarpConfig.addDefault(Path + "x", x);
-						WarpConfig.WarpConfig.addDefault(Path + "y", y);
-						WarpConfig.WarpConfig.addDefault(Path + "z", z);
+						WarpConfig.WarpConfig.set(Path + "world", curworld);
+						WarpConfig.WarpConfig.set(Path + "x", x);
+						WarpConfig.WarpConfig.set(Path + "y", y);
+						WarpConfig.WarpConfig.set(Path + "z", z);
 						WarpConfig.saveWarps();
 						cs.sendMessage("Warp " + args[0] + " is set!");
 						return true;
