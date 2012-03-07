@@ -28,10 +28,12 @@ public class CommandItem implements CommandExecutor {
 		
 		Player target = player.getServer().getPlayer(args[0]);
 		
+		if (cmd.getName().equalsIgnoreCase("item")&& args.length == 1){
 		  if (!player.hasPermission("CMDbox.Item")){
 			sender.sendMessage(ChatColor.RED + "You don't have permission to use this command!");
+		  }else if (player.hasPermission("CMDbox.Item")){
 		
-			if (cmd.getName().equalsIgnoreCase("item")&& args.length == 1){
+			
 			}
 		
 			
