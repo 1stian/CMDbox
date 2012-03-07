@@ -26,7 +26,7 @@ public class CommandItem implements CommandExecutor {
 		    return true;   
 		  }
 		
-		Player target = player.getServer().getPlayer(args[0]);
+		//Player target = player.getServer().getPlayer(args[0]);
 		
 		if (cmd.getName().equalsIgnoreCase("item")&& args.length == 1){
 		  if (!player.hasPermission("CMDbox.Item")){

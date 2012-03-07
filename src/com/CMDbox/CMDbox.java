@@ -1,9 +1,6 @@
 package com.CMDbox;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.logging.Logger;
 
 import org.bukkit.plugin.PluginManager;
@@ -28,7 +25,6 @@ import com.CMDbox.Config.WarpConfig;
 public class CMDbox extends JavaPlugin {
 	public static CMDbox plugin;
 	public CMDbox pluginNS = this;
-	public BroadCaster bc;
 	public Logger log = Logger.getLogger("Minecraft");
 	
 	public void onDisable(){
@@ -42,8 +38,12 @@ public class CMDbox extends JavaPlugin {
 		getCommands(this);
 		PluginConfig(this);
 		
+		plugin = this;
+		
 		File datadir = new File (this.getDataFolder() + "/data");
 		datadir.mkdir();
+		File playerdir = new File(this.getDataFolder() + "/data/players");
+		playerdir.mkdir();
 		WarpConfig.loadWarps();
 		DefaultConfig.loadConfig();
 		MessagesTextFile.loadMessages();
@@ -85,8 +85,8 @@ public class CMDbox extends JavaPlugin {
 	public void MessagesConfigFile(CMDbox CMDbox){
 		MessagesTextFile.MessagesConfig.options().header("CMDbox BroadCaster settings!");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.Enable", false);
+		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.prefix", "[HC]");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
-		//List<String> list = MessagesTextFile.MessagesConfig.getStringList("messages");
 		MessagesTextFile.MessagesConfig.addDefault("Messages.How many lines", 4);
 		MessagesTextFile.MessagesConfig.addDefault("Messages.1", "Hi and welcome1");
 		MessagesTextFile.MessagesConfig.addDefault("Messages.2", "Hi and welcome2");
