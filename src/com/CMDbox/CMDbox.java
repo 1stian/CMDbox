@@ -75,9 +75,9 @@ public class CMDbox extends JavaPlugin {
 	public void PluginConfig(CMDbox CMDbox){
 		DefaultConfig.getConfig().getDefaults();
 		DefaultConfig.DefaultConfig.options().header("CMDbox Config file!");
-		DefaultConfig.DefaultConfig.addDefault("general.Welcome text to the player", "Welcome!");
-		DefaultConfig.DefaultConfig.addDefault("general.First time join text before playerName", "Welcome");
-		DefaultConfig.DefaultConfig.addDefault("general.First time join text after playerName", "to the server");
+		DefaultConfig.DefaultConfig.addDefault("general.Welcome text to the player", "'Welcome!'");
+		DefaultConfig.DefaultConfig.addDefault("general.First time join text before playerName", "'Welcome'");
+		DefaultConfig.DefaultConfig.addDefault("general.First time join text after playerName", "'to the server'");
 		DefaultConfig.DefaultConfig.addDefault("players.Homes.Allow multiple homes", true);
 		DefaultConfig.DefaultConfig.addDefault("players.Homes.How many homes allowed", 5);
 		DefaultConfig.saveConfig();
@@ -86,7 +86,7 @@ public class CMDbox extends JavaPlugin {
 	public void MessagesConfigFile(CMDbox CMDbox){
 		MessagesTextFile.MessagesConfig.options().header("CMDbox BroadCaster settings!");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.Enable", false);
-		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.prefix", "[HC]");
+		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.prefix", "'[HC]'");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
 		MessagesTextFile.MessagesConfig.addDefault("Messages.How many lines", 4);
 		MessagesTextFile.MessagesConfig.addDefault("Messages.1", "'Hi and welcome1'");
