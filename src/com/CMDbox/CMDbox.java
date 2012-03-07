@@ -49,11 +49,9 @@ public class CMDbox extends JavaPlugin {
 		MessagesTextFile.loadMessages();
 		PluginConfig(this);
 		MessagesConfigFile(this);
-		//BroadCaster.bc.messages();
 		
 		pluginNS.getServer().getScheduler().scheduleSyncDelayedTask(pluginNS, new Runnable() {
-
-		    public void run() {
+			public void run() {
 		    	BroadCaster.messages();
 		    }
 		}, 120L);
@@ -88,10 +86,10 @@ public class CMDbox extends JavaPlugin {
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.prefix", "[HC]");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
 		MessagesTextFile.MessagesConfig.addDefault("Messages.How many lines", 4);
-		MessagesTextFile.MessagesConfig.addDefault("Messages.1", "Hi and welcome1");
-		MessagesTextFile.MessagesConfig.addDefault("Messages.2", "Hi and welcome2");
-		MessagesTextFile.MessagesConfig.addDefault("Messages.3", "Hi and welcome3");
-		MessagesTextFile.MessagesConfig.addDefault("Messages.4", "Hi and welcome4");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.1", "'Hi and welcome1'");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.2", "'Hi and welcome2'");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.3", "'Hi and welcome3'");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.4", "'Hi and welcome4'");
 		MessagesTextFile.saveMessages();
 	}
 }
