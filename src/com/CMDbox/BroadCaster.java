@@ -21,6 +21,8 @@ public class BroadCaster {
 					   }
 					   x++;
 				       String message = MessagesTextFile.MessagesConfig.getString("Messages." + x);
+				        
+				       //Colors
 				        message = message.replaceAll("&0", ChatColor.BLACK + "");
 				        message = message.replaceAll("&1", ChatColor.DARK_BLUE + "");
 				        message = message.replaceAll("&2", ChatColor.DARK_GREEN + "");
