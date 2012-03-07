@@ -75,6 +75,9 @@ public class CMDbox extends JavaPlugin {
 	public void PluginConfig(CMDbox CMDbox){
 		DefaultConfig.getConfig().getDefaults();
 		DefaultConfig.DefaultConfig.options().header("CMDbox Config file!");
+		DefaultConfig.DefaultConfig.addDefault("general.Welcome text to the player", "Welcome!");
+		DefaultConfig.DefaultConfig.addDefault("general.First time join text before playerName", "Welcome");
+		DefaultConfig.DefaultConfig.addDefault("general.First time join text after playerName", "to the server");
 		DefaultConfig.DefaultConfig.addDefault("players.Homes.Allow multiple homes", true);
 		DefaultConfig.DefaultConfig.addDefault("players.Homes.How many homes allowed", 5);
 		DefaultConfig.saveConfig();
