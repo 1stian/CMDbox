@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.CMDbox.CMDbox;
+import com.CMDbox.Commands.Resources.GodMap;
 
 public class CommandGod implements CommandExecutor{
 
@@ -15,26 +16,34 @@ public class CommandGod implements CommandExecutor{
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		Player player = (Player) sender;
-		
-		if (args.length > 1){
-			sender.sendMessage("You're doing it wrong!");
-		}else if 
-		   (args.length < 1){
-			sender.sendMessage("Too many arguments!");
-		return true;
+	public boolean onCommand(CommandSender cs, Command cmd, String label, String[] args) {
+		if (cs.hasPermission("CMDbox.god")){
+			if (cmd.getName().equalsIgnoreCase("god")){
+				if (args.length == 1){
+					if (cs.hasPermission("CMDbox.god.others")){
+						Player target = cs.getServer().getPlayer(args[0]);
+						if (!GodMap.GodM.containsKey(target)){
+							GodMap.GodM.put(target, true);
+							cs.sendMessage("God mode enabled for " + args[0]);
+						}else{
+							GodMap.GodM.put(target, false);
+							cs.sendMessage("God mode disabled for " + args[0]);
+						}
+					}
+				}else if(args.length == 0){
+					String pname = cs.getName();
+					Player player = cs.getServer().getPlayer(pname);
+					if (!GodMap.GodM.containsKey(player)){
+						GodMap.GodM.put(player, true);
+						cs.sendMessage("God mode enabled");
+					}else{
+						GodMap.GodM.put(player, false);
+						cs.sendMessage("God mode disabled");
+					}
+				}
+			}
 		}
-		   Player target = player.getServer().getPlayer(args[0]);
-		if (cmd.getName().equalsIgnoreCase("god")&& args.length == 1);
-		if (!player.hasPermission("CMDbox.God")){
-			sender.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
-		}else if (player.hasPermission("CMDbox.God"));
-		   player.setNoDamageTicks(999999999);
-		   sender.sendMessage(ChatColor.GREEN + "Godmode activated!");
-		   target.setNoDamageTicks(999999999);
-		   target.sendMessage(ChatColor.GREEN + "Godmode activated!");
-		   
+		
 		return false;
      }	
 }
