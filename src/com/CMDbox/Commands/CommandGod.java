@@ -14,7 +14,7 @@ public class CommandGod implements CommandExecutor{
 
 	public CommandGod(CMDbox cmDbox) {
 	}
-
+	//not tested yet!/not done yet!
 	@Override
 	public boolean onCommand(CommandSender cs, Command cmd, String label, String[] args) {
 		if (cs.hasPermission("CMDbox.god")){
