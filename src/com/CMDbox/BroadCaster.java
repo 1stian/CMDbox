@@ -40,6 +40,24 @@ public class BroadCaster {
 				        message = message.replaceAll("&e", ChatColor.YELLOW + "");
 				        message = message.replaceAll("&f", ChatColor.WHITE + "");
 				        message = message.replaceAll("&g", ChatColor.MAGIC + "");
+				        
+				        prefix = prefix.replaceAll("&0", ChatColor.BLACK + "");
+				        prefix = prefix.replaceAll("&1", ChatColor.DARK_BLUE + "");
+				        prefix = prefix.replaceAll("&2", ChatColor.DARK_GREEN + "");
+				        prefix = prefix.replaceAll("&3", ChatColor.DARK_AQUA + "");
+				        prefix = prefix.replaceAll("&4", ChatColor.DARK_RED + "");
+				        prefix = prefix.replaceAll("&5", ChatColor.DARK_PURPLE + "");
+				        prefix = prefix.replaceAll("&6", ChatColor.GOLD + "");
+				        prefix = prefix.replaceAll("&7", ChatColor.GRAY + "");
+				        prefix = prefix.replaceAll("&8", ChatColor.DARK_GRAY+ "");
+				        prefix = prefix.replaceAll("&9", ChatColor.BLUE + "");
+				        prefix = prefix.replaceAll("&a", ChatColor.GREEN + "");
+				        prefix = prefix.replaceAll("&b", ChatColor.AQUA + "");
+				        prefix = prefix.replaceAll("&c", ChatColor.RED + "");
+				        prefix = prefix.replaceAll("&d", ChatColor.LIGHT_PURPLE + "");
+				        prefix = prefix.replaceAll("&e", ChatColor.YELLOW + "");
+				        prefix = prefix.replaceAll("&f", ChatColor.WHITE + "");
+				        prefix = prefix.replaceAll("&g", ChatColor.MAGIC + "");
 				       
 				       Bukkit.broadcastMessage(prefix + " " + message);
 				   }

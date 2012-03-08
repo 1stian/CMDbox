@@ -86,13 +86,13 @@ public class CMDbox extends JavaPlugin {
 	public void MessagesConfigFile(CMDbox CMDbox){
 		MessagesTextFile.MessagesConfig.options().header("CMDbox BroadCaster settings!");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.Enable", false);
-		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.prefix", "'[HC]'");
+		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.prefix", "&a[&fCMDbox&a]&f");
 		MessagesTextFile.MessagesConfig.addDefault("BroadCaster.interval", 45);
 		MessagesTextFile.MessagesConfig.addDefault("Messages.How many lines", 4);
-		MessagesTextFile.MessagesConfig.addDefault("Messages.1", "'Hi and welcome1'");
-		MessagesTextFile.MessagesConfig.addDefault("Messages.2", "'Hi and welcome2'");
-		MessagesTextFile.MessagesConfig.addDefault("Messages.3", "'Hi and welcome3'");
-		MessagesTextFile.MessagesConfig.addDefault("Messages.4", "'Hi and welcome4'");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.1", "&aHi &fand &bwelcome1");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.2", "&aHi &fand &bwelcome2");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.3", "&aHi &fand &bwelcome3");
+		MessagesTextFile.MessagesConfig.addDefault("Messages.4", "&aHi &fand &bwelcome4");
 		MessagesTextFile.saveMessages();
 	}
 }
