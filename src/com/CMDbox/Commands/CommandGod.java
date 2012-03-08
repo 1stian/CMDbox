@@ -24,10 +24,10 @@ public class CommandGod implements CommandExecutor{
 						Player target = cs.getServer().getPlayer(args[0]);
 						if (!GodMap.GodM.containsKey(target)){
 							GodMap.GodM.put(target, true);
-							cs.sendMessage("God mode enabled for " + args[0]);
+							cs.sendMessage(ChatColor.AQUA + "God mode enabled for " + ChatColor.GREEN + args[0]);
 						}else{
 							GodMap.GodM.put(target, false);
-							cs.sendMessage("God mode disabled for " + args[0]);
+							cs.sendMessage(ChatColor.AQUA + "God mode disabled for " + ChatColor.GREEN + args[0]);
 						}
 					}
 				}else if(args.length == 0){
@@ -35,10 +35,10 @@ public class CommandGod implements CommandExecutor{
 					Player player = cs.getServer().getPlayer(pname);
 					if (!GodMap.GodM.containsKey(player)){
 						GodMap.GodM.put(player, true);
-						cs.sendMessage("God mode enabled");
+						cs.sendMessage(ChatColor.AQUA + "God mode enabled");
 					}else{
 						GodMap.GodM.put(player, false);
-						cs.sendMessage("God mode disabled");
+						cs.sendMessage(ChatColor.AQUA + "God mode disabled");
 					}
 				}
 			}
