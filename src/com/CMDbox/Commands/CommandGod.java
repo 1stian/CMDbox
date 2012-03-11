@@ -19,7 +19,7 @@ public class CommandGod implements CommandExecutor{
 	public boolean onCommand(CommandSender cs, Command cmd, String label, String[] args) {
 		if (cs.hasPermission("CMDbox.god")){
 			if (cmd.getName().equalsIgnoreCase("god")){
-				if (args.length == 1){
+				if (args.length > 1){
 					if (cs.hasPermission("CMDbox.god.others")){
 						Player target = cs.getServer().getPlayer(args[0]);
 						if (!GodMap.GodM.containsKey(target)){
@@ -30,7 +30,7 @@ public class CommandGod implements CommandExecutor{
 							cs.sendMessage(ChatColor.AQUA + "God mode disabled for " + ChatColor.GREEN + args[0]);
 						}
 					}
-				}else if(args.length == 0){
+				}else if(args.length < 0){
 					String pname = cs.getName();
 					Player player = cs.getServer().getPlayer(pname);
 					if (!GodMap.GodM.containsKey(player)){
