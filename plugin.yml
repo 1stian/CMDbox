@@ -53,4 +53,12 @@ commands:
    cmdbox:
       description: Information about CMDbox
       usage: /cmdbox
+   home:
+      description: Teleports you to your home!
+      permissions: CMDbox.home
+      usage: /home
+   sethome:
+      description: Set your home to your current location!
+      permissions: CMDbox.sethome
+      usage: /sethome 
       

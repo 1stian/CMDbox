@@ -10,15 +10,18 @@ import com.CMDbox.Commands.CommandBan;
 import com.CMDbox.Commands.CommandCMDbox;
 import com.CMDbox.Commands.CommandDelWarp;
 import com.CMDbox.Commands.CommandGod;
+import com.CMDbox.Commands.CommandHome;
 import com.CMDbox.Commands.CommandItem;
 import com.CMDbox.Commands.CommandKick;
 import com.CMDbox.Commands.CommandMute;
+import com.CMDbox.Commands.CommandSetHome;
 import com.CMDbox.Commands.CommandSetWarp;
 import com.CMDbox.Commands.CommandTp;
 import com.CMDbox.Commands.CommandTphere;
 import com.CMDbox.Commands.CommandUnban;
 import com.CMDbox.Commands.CommandWarp;
 import com.CMDbox.Config.DefaultConfig;
+import com.CMDbox.Config.HomesFile;
 import com.CMDbox.Config.MessagesTextFile;
 import com.CMDbox.Config.WarpConfig;
 
@@ -46,6 +49,7 @@ public class CMDbox extends JavaPlugin {
 		playerdir.mkdir();
 		WarpConfig.loadWarps();
 		DefaultConfig.loadConfig();
+		HomesFile.loadHomes();
 		MessagesTextFile.loadMessages();
 		PluginConfig(this);
 		MessagesConfigFile(this);
@@ -70,6 +74,8 @@ public class CMDbox extends JavaPlugin {
 		this.getCommand("god").setExecutor(new CommandGod(this));
 		this.getCommand("item").setExecutor(new CommandItem(this));
 		this.getCommand("cmdbox").setExecutor(new CommandCMDbox(this));
+		this.getCommand("home").setExecutor(new CommandHome(this));
+		this.getCommand("sethome").setExecutor(new CommandSetHome(this));
 	}
 	
 	public void PluginConfig(CMDbox CMDbox){
@@ -79,7 +85,7 @@ public class CMDbox extends JavaPlugin {
 		DefaultConfig.DefaultConfig.addDefault("general.First time join text before playerName", "'Welcome'");
 		DefaultConfig.DefaultConfig.addDefault("general.First time join text after playerName", "'to the server'");
 		DefaultConfig.DefaultConfig.addDefault("players.Homes.Allow multiple homes", true);
-		DefaultConfig.DefaultConfig.addDefault("players.Homes.How many homes allowed", 5);
+		DefaultConfig.DefaultConfig.addDefault("players.Homes.How many homes allowed - THIS IS NOT WORKING YET", 5);
 		DefaultConfig.saveConfig();
 	}
 	
