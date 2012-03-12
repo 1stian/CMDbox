@@ -19,8 +19,17 @@ public class CommandSetHome implements CommandExecutor {
 			if(cmd.getName().equalsIgnoreCase("sethome")){
 				String name = cs.getName();
 				if(DefaultConfig.DefaultConfig.getBoolean("players.Homes.Allow multiple homes")== true){
-					if(cmd instanceof Player){
-					    Player player = (Player)cmd;
+					if(cs instanceof Player){
+						if (args.length < 1){
+							cs.sendMessage("Name your  home!");
+							cs.sendMessage("/sethome homeName");
+							return true;
+						}else if(args.length > 1){
+							cs.sendMessage("Too many arguments!");
+							cs.sendMessage("/sethome homeName");
+							return true;
+						}else{
+							Player player = (Player)cs;
 					    	String cw = player.getWorld().getName();
 					    	int x = player.getLocation().getBlockX();
 					    	int y = player.getLocation().getBlockY();
@@ -33,25 +42,31 @@ public class CommandSetHome implements CommandExecutor {
 					    	HomesFile.saveHomes();
 					    	cs.sendMessage("Your home is set!");
 					    	return true;
-					    }
+						}
+					}
 				}else{
-					if(cmd instanceof Player){
-					    Player player = (Player)cmd;
+					if(cs instanceof Player){
 					    	if (HomesFile.HomesConfig.contains(name + ".home")){
 					    		cs.sendMessage("You already got a home!");
 					    	}else{
-					    		String cw = player.getWorld().getName();
-					    		int x = player.getLocation().getBlockX();
-					    		int y = player.getLocation().getBlockY();
-					    		int z = player.getLocation().getBlockZ();
-					    		
-					    		HomesFile.HomesConfig.addDefault(name + ".home.world", cw);
-					    		HomesFile.HomesConfig.addDefault(name + ".home.x", x);
-					    		HomesFile.HomesConfig.addDefault(name + ".home.y", y);
-					    		HomesFile.HomesConfig.addDefault(name + ".home.z", z);
-					    		HomesFile.saveHomes();
-					    		cs.sendMessage("Your home is set!");
-					    		return true;
+					    		if(args.length > 0){
+									cs.sendMessage("Too many arguments!");
+									return true;
+								}else{
+									Player player = (Player)cs;
+							    	String cw = player.getWorld().getName();
+							    	int x = player.getLocation().getBlockX();
+							    	int y = player.getLocation().getBlockY();
+							    	int z = player.getLocation().getBlockZ();
+							    		
+							    	HomesFile.HomesConfig.addDefault(name + ".home.world", cw);
+							    	HomesFile.HomesConfig.addDefault(name + ".home.x", x);
+							    	HomesFile.HomesConfig.addDefault(name + ".home.y", y);
+							    	HomesFile.HomesConfig.addDefault(name + ".home.z", z);
+							    	HomesFile.saveHomes();
+							    	cs.sendMessage("Your home is set!");
+							    	return true;
+								}
 					    	}
 					    }
 				}
