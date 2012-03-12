@@ -21,12 +21,12 @@ public class CommandSetHome implements CommandExecutor {
 				if(DefaultConfig.DefaultConfig.getBoolean("players.Homes.Allow multiple homes")== true){
 					if(cs instanceof Player){
 						if (args.length < 1){
-							cs.sendMessage("Name your  home!");
-							cs.sendMessage("/sethome homeName");
+							cs.sendMessage("Name your home!");
+							cs.sendMessage("Usage: /sethome homeName");
 							return true;
 						}else if(args.length > 1){
 							cs.sendMessage("Too many arguments!");
-							cs.sendMessage("/sethome homeName");
+							cs.sendMessage("Usage: /sethome homeName");
 							return true;
 						}else{
 							Player player = (Player)cs;
@@ -35,10 +35,10 @@ public class CommandSetHome implements CommandExecutor {
 					    	int y = player.getLocation().getBlockY();
 					    	int z = player.getLocation().getBlockZ();
 					    		
-					    	HomesFile.HomesConfig.addDefault(name + ".home.world", cw);
-					    	HomesFile.HomesConfig.addDefault(name + ".home.x", x);
-					    	HomesFile.HomesConfig.addDefault(name + ".home.y", y);
-					    	HomesFile.HomesConfig.addDefault(name + ".home.z", z);
+					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".world", cw);
+					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".x", x);
+					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".y", y);
+					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".z", z);
 					    	HomesFile.saveHomes();
 					    	cs.sendMessage("Your home is set!");
 					    	return true;
@@ -48,6 +48,7 @@ public class CommandSetHome implements CommandExecutor {
 					if(cs instanceof Player){
 					    	if (HomesFile.HomesConfig.contains(name + ".home")){
 					    		cs.sendMessage("You already got a home!");
+					    		return true;
 					    	}else{
 					    		if(args.length > 0){
 									cs.sendMessage("Too many arguments!");

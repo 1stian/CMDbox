@@ -16,7 +16,12 @@ public class CommandHome implements CommandExecutor {
 		if(cs.hasPermission("CMDbox.home")){
 			if(cmd.getName().equalsIgnoreCase("home")){
 				if(DefaultConfig.DefaultConfig.getBoolean("players.Homes.Allow multiple homes")== true){
-					
+					if(args.length < 1){
+						
+					}else if(args.length > 1){
+						cs.sendMessage("Too many arguments!");
+						cs.sendMessage("Usage: /home homeName");
+					}
 				}else{
 					
 				}
