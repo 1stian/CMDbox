@@ -30,19 +30,23 @@ public class CommandSetHome implements CommandExecutor {
 							cs.sendMessage("Usage: /sethome homeName");
 							return true;
 						}else{
-							Player player = (Player)cs;
-					    	String cw = player.getWorld().getName();
-					    	int x = player.getLocation().getBlockX();
-					    	int y = player.getLocation().getBlockY();
-					    	int z = player.getLocation().getBlockZ();
-					    		
-					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".world", cw);
-					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".x", x);
-					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".y", y);
-					    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".z", z);
-					    	HomesFile.saveHomes();
-					    	cs.sendMessage("Your home is set!");
-					    	return true;
+							if(!HomesFile.HomesConfig.contains(name + args[0])){
+								Player player = (Player)cs;
+						    	String cw = player.getWorld().getName();
+						    	int x = player.getLocation().getBlockX();
+						    	int y = player.getLocation().getBlockY();
+						    	int z = player.getLocation().getBlockZ();
+						    		
+						    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".world", cw);
+						    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".x", x);
+						    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".y", y);
+						    	HomesFile.HomesConfig.addDefault(name + "."+ args[0] + ".z", z);
+						    	HomesFile.saveHomes();
+						    	cs.sendMessage("Your home is set!");
+						    	return true;
+							}else{
+								cs.sendMessage("You already got a home with that name!");
+							}
 						}
 					}
 				}else{

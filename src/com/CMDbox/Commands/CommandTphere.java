@@ -15,7 +15,7 @@ public class CommandTphere implements CommandExecutor {
 
 	public boolean onCommand(CommandSender cs, Command cmd, String commandLabel, String[] args){
 		if (cs.hasPermission("CMDbox.tphere")){
-			if (cs.getName().equalsIgnoreCase("tphere")){
+			if (cmd.getName().equalsIgnoreCase("tphere")){
 				if (args.length < 1){
 					cs.sendMessage("Missing player name!");
 					cs.sendMessage("Usage: /tphere playerName");
@@ -27,17 +27,18 @@ public class CommandTphere implements CommandExecutor {
 				}else{
 					Player player = (Player) cs;
 					Player target = player.getServer().getPlayer(args[0]);
-					if (!(target == null)){
-						target.teleport(player);
+					if (target == null){
+						cs.sendMessage("Player offline or does not exsist!");
 						return true;
 					}else{
-						cs.sendMessage("Player offline or does not exsist!");
+						target.teleport(player);
 						return true;
 					}
 				}
 			}
 		}else{
 			cs.sendMessage(ChatColor.RED + "You don't have permission for this command.");
+			return true;
 		}
 		return false;
 		

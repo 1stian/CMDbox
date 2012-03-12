@@ -42,9 +42,9 @@ public class CommandWarp implements CommandExecutor {
 				}else{
 					final String WarpEx = args[0];
 					if (WarpConfig.WarpConfig.contains(WarpEx)){
-						String cworld = WarpConfig.WarpConfig.getString(WarpEx + "world");
-						int x = WarpConfig.WarpConfig.getInt(WarpEx + "x");
-						int z = WarpConfig.WarpConfig.getInt(WarpEx + "z");
+						String cworld = WarpConfig.WarpConfig.getString(WarpEx + ".world");
+						int x = WarpConfig.WarpConfig.getInt(WarpEx + ".x");
+						int z = WarpConfig.WarpConfig.getInt(WarpEx + ".z");
 						WarpMap.ChunkLocWorld.put("world", cworld);
 						WarpMap.ChunkLoc.put("x", x);
 						WarpMap.ChunkLoc.put("z", z);
@@ -54,10 +54,10 @@ public class CommandWarp implements CommandExecutor {
 						CMDbox.plugin.getServer().getScheduler().scheduleSyncDelayedTask(CMDbox.plugin, new Runnable() {
 							@Override
 							public void run() {
-								String cworld = WarpConfig.WarpConfig.getString(WarpEx + "world");
-								int x = WarpConfig.WarpConfig.getInt(WarpEx + "x");
-								int y = WarpConfig.WarpConfig.getInt(WarpEx + "y");
-								int z = WarpConfig.WarpConfig.getInt(WarpEx + "z");
+								String cworld = WarpConfig.WarpConfig.getString(WarpEx + ".world");
+								int x = WarpConfig.WarpConfig.getInt(WarpEx + ".x");
+								int y = WarpConfig.WarpConfig.getInt(WarpEx + ".y");
+								int z = WarpConfig.WarpConfig.getInt(WarpEx + ".z");
 								Player player = (Player) cs;
 								
 								Location warpto = new Location(Bukkit.getWorld(cworld), x, y, z);

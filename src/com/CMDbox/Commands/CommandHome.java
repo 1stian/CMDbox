@@ -47,7 +47,7 @@ public class CommandHome implements CommandExecutor {
 				}else{
 					String name = cs.getName();
 					if(HomesFile.HomesConfig.contains(name + ".home")){
-						String cWorld = HomesFile.HomesConfig.getString(name + "."+ args[0] + ".world");
+						String cWorld = HomesFile.HomesConfig.getString(name + ".home" + ".world");
 				    	int x = HomesFile.HomesConfig.getInt(name + ".home" + ".x");
 				    	int y = HomesFile.HomesConfig.getInt(name + ".home" + ".y");
 				    	int z = HomesFile.HomesConfig.getInt(name + ".home" + ".z");
