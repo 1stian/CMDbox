@@ -1,6 +1,7 @@
 package com.CMDbox.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -71,6 +72,8 @@ public class CommandWarp implements CommandExecutor {
 					}
 				}
 			}
+		}else{
+			cs.sendMessage(ChatColor.RED + "You don't have permission for this command.");
 		}
 		return false;
 	}

@@ -1,5 +1,6 @@
 package com.CMDbox.Commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -72,6 +73,8 @@ public class CommandSetHome implements CommandExecutor {
 					    }
 				}
 			}
+		}else{
+			cs.sendMessage(ChatColor.RED + "You don't have access to that command!");
 		}
 		return false;
 		
