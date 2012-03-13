@@ -23,6 +23,7 @@ import com.CMDbox.Commands.CommandWarp;
 import com.CMDbox.Config.DefaultConfig;
 import com.CMDbox.Config.HomesFile;
 import com.CMDbox.Config.MessagesTextFile;
+import com.CMDbox.Config.SpawnConfig;
 import com.CMDbox.Config.WarpConfig;
 
 public class CMDbox extends JavaPlugin {
@@ -49,6 +50,7 @@ public class CMDbox extends JavaPlugin {
 		playerdir.mkdir();
 		WarpConfig.loadWarps();
 		DefaultConfig.loadConfig();
+		SpawnConfig.loadSpawn();
 		HomesFile.loadHomes();
 		MessagesTextFile.loadMessages();
 		PluginConfig(this);
