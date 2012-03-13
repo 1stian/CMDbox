@@ -1,12 +1,13 @@
 package com.CMDbox.Commands;
 
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.CMDbox.Config.SpawnConfig;
 
-public class CommandSetSpawn {
+public class CommandSetSpawn implements CommandExecutor {
 	public boolean onCommand(CommandSender cs, Command cmd, String commandLabel, String[] args){
 		if (cs.hasPermission("CMDbox.setspawn")){
 			if (cmd.getName().equalsIgnoreCase("setspawn")){
