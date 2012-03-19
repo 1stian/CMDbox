@@ -33,7 +33,7 @@ public class CMDbox extends JavaPlugin {
 	public void onDisable(){
 		
 	}
-	//test
+	
 	public void onEnable(){
 		PluginManager pm = getServer().getPluginManager();
 			pm.registerEvents(new Chat(), this);
